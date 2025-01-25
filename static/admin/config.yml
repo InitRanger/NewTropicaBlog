@@ -1,6 +1,6 @@
 backend:
-  name: git-gateway
-  branch: main
+  name: github
+  repo: InitRanger/NewTropicaBlog
 
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
