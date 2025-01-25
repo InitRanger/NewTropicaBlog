@@ -1,7 +1,7 @@
 ---
 layout: blog
-title: "NewTropic Development Blog #01 - A journey of a thousand miles begins
-  with a single step"
+title: NewTropic Development Blog 01 - A journey of a thousand miles begins with
+  a single step
 description: This week has been a productive week. Let's talk about it.
 date: 2025-01-25T13:13:00.000Z
 image: https://i.imgur.com/csv66s9.png
