@@ -5,5 +5,6 @@ menu:
         weight: 1
         params:
             icon: home
-        { {< redirect >} }
 ---
+
+{ {< redirect >} }
