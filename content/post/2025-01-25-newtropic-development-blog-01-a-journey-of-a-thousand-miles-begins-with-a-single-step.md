@@ -7,6 +7,9 @@ date: 2025-01-25T13:13:00.000Z
 image: https://i.imgur.com/csv66s9.png
 categories:
   - This Week in NewTropica
+tags:
+  - Development News
+  - Community News
 ---
 # NEWTROPIC DEVELOPMENT BLOG #01
 
@@ -169,3 +172,11 @@ Speaking of the community...
 As I have said before we want this project to be centered around the community. Invite your friends, talk with us in the server and have fun.
 
 I know the server is not the best right now and I have some ideas that might make it more fun for everyone. Feel free to leave ideas in the Discord and if we think they are good then they just might make into the community voting phase and if they get enough votes then it will become a feature.
+
+# Thank You!
+
+Thank you all for being a part of the community and taking the time to read this blog post. Feel free to comment down below and let us know your thoughts. You guys are what make doing this project worth it. I know it didn't come out on Friday so hopefully it will be on time next week.
+
+Until next time.....
+
+InitRanger (Software Sorcerer)
