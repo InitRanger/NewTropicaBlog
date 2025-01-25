@@ -16,9 +16,9 @@ url = "https://discord.gg/P9aWEY48"
 icon = "brand-discord"
 
 [[social]]
-identifier = "twitter"
+identifier = "x"
 name = "X"
 url = "https://x.com/NewtropicaOG"
 
 [social.params]
-icon = "brand-twitter"
+icon = "brand-twitter-x"
