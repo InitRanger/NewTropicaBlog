@@ -1,7 +1,7 @@
 ---
 layout: blog
-title: NewTropic Development Blog 01 - A journey of a thousand miles begins with
-  a single step
+title: NewTropica Development Blog 01 - A journey of a thousand miles begins
+  with a single step
 description: This week has been a productive week. Let's talk about it.
 date: 2025-01-25T13:13:00.000Z
 image: https://i.imgur.com/csv66s9.png
@@ -11,11 +11,11 @@ tags:
   - Development News
   - Community News
 ---
-# NEWTROPIC DEVELOPMENT BLOG #01
+# NEWTROPICA DEVELOPMENT BLOG #01
 
 *Jan 24, 2025 - InitRanger, Programmer*
 
-What's up, everyone? InitRanger here with the first of many blog posts about the development of NewTropic. Today I hope to give you some insights into what we have been working on the past week. I will go into detail about the following things:
+What's up, everyone? InitRanger here with the first of many blog posts about the development of NewTropica. Today I hope to give you some insights into what we have been working on the past week. I will go into detail about the following things:
 
 * The game engine
 * The movement system
@@ -125,8 +125,6 @@ I'm so glad you asked.
 Currently the tool is in very early stages of development. It works by loading a GraphEdit node and from this node you can spawn custom GraphNodes. Currently there is only a comment node that will allow you to comment your graph.
 
 - - -
-
-
 
 ![ODIN Dialogue Nodes](https://i.imgur.com/csv66s9.png)
 
