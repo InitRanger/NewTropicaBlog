@@ -1,0 +1,22 @@
+backend:
+  name: github
+  repo: InitRanger/NewTropicaBlog
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "TWINT" # Used in routes, e.g., /admin/collections/blog
+    label: "This Week in NewTropica" # Used in the UI
+    folder: "content/post" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}.md" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string"}
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Categories", name: "categories", widget: "select", options: ["This Week in NewTropica"], min: 1, multiple: true}
+      - { label: "Tags", name: "tags", widget: "select", options: ["Development News", "Community News", "Team News"], min: 1, multiple: true}
+      - { label: "Body", name: "body", widget: "markdown" }

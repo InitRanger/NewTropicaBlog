@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Development News on NewTropica Blog</title><link>https://newtropica.netlify.app/tags/development-news/</link><description>Recent content in Development News on NewTropica Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 25 Jan 2025 13:13:00 +0000</lastBuildDate><atom:link href="https://newtropica.netlify.app/tags/development-news/index.xml" rel="self" type="application/rss+xml"/><item><title>NewTropica Development Blog 01 - A journey of a thousand miles begins with a single step</title><link>https://newtropica.netlify.app/p/newtropica-development-blog-01-a-journey-of-a-thousand-miles-begins-with-a-single-step/</link><pubDate>Sat, 25 Jan 2025 13:13:00 +0000</pubDate><guid>https://newtropica.netlify.app/p/newtropica-development-blog-01-a-journey-of-a-thousand-miles-begins-with-a-single-step/</guid><description>&lt;img src="https://i.imgur.com/csv66s9.png" alt="Featured image of post NewTropica Development Blog 01 - A journey of a thousand miles begins with a single step" />&lt;h1 id="newtropica-development-blog-01">NEWTROPICA DEVELOPMENT BLOG #01
+&lt;/h1>&lt;p>&lt;em>Jan 24, 2025 - InitRanger, Programmer&lt;/em>&lt;/p>
+&lt;p>What&amp;rsquo;s up, everyone? InitRanger here with the first of many blog posts about the development of NewTropica. Today I hope to give you some insights into what we have been working on the past week. I will go into detail about the following things:&lt;/p>
+&lt;ul>
+&lt;li>The game engine&lt;/li>
+&lt;li>The movement system&lt;/li>
+&lt;li>The ODIN framework&lt;/li>
+&lt;li>Dialogue Nodes&lt;/li>
+&lt;li>Public Roadmap&lt;/li>
+&lt;li>Community&lt;/li>
+&lt;/ul>
+&lt;p>Here we go!&lt;/p>
+&lt;h1 id="the-game-engine">THE GAME ENGINE
+&lt;/h1>&lt;p>When the team was first formed, we discussed in length what tools we should use to develop the game. In the end, we settled on using the Godot game engine. We went over many options, and I want to go over those options with you today so you understand why we chose Godot.&lt;/p>
+&lt;p>Initially, there was talk about using bare C++ with something like SDL or GLFW. This idea was short-lived by the very fact that it would have increased development time hugely. The goal of this project is to make a game, not a game engine. We would have had to put a bunch of time into the development of the engine instead of the actual project. Given the nature of the game, it was doable but in the end, it was decided that our time was better spent using an existing engine instead of making our own.&lt;/p>
+&lt;p>Unreal Engine was briefly considered but was quickly ruled out due to it being completely overkill for a project like this. While 2D games are more than possible in Unreal Engine it&amp;rsquo;s overkill to use the powerhouse that is Unreal for a 2D game like this. There was also the fact that our other programmer &lt;code>Idiot&lt;/code> is more comfortable using raw code than the Unreal Engine blueprint scripting system. I rather not use Unreal Engine because there are additions that we would have to make to any engine and Unreal is not the most user-friendly when trying to add features to the engine itself.&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="https://i.imgur.com/k9EoUYR.jpeg"
+loading="lazy"
+alt="Unreal Engine Blueprints"
+>&lt;/p>
+&lt;p>&lt;em>Unreal Engines Blueprint Scripting&lt;/em>&lt;/p>
+&lt;hr>
+&lt;p>The next engine we considered was Unity. Unity is a very strong engine for 2D games as well as indie games. The first reason we decided not to go with Unity is because of the Unity runtime situation that Unity announced in 2023. While Unity did ultimately back down on this after lots of public outcry, however they have lost all trust people had in them. There is no way to be sure they won&amp;rsquo;t try something in the future and that is not a risk we wanted to take.&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="https://i.imgur.com/o9L1VWB.jpeg"
+loading="lazy"
+alt="Unity Runtime Fee"
+>&lt;/p>
+&lt;p>&lt;em>Unity Runtime Fee Chart&lt;/em>&lt;/p>
+&lt;hr>
+&lt;p>There is also the fact of porting the game to consoles. The ultimate goal is to have NewTropic on as many platforms as possible including platforms like the Switch or PS5. This presents a problem if we choose to use Unity. Unity requires you to use Unity Pro if you want to port to console. This was a problem because Unity Pro would cost us &lt;strong>$2,200&lt;/strong> a year. This would prevent us from porting for a long time if ever because nobody on the team can afford to do that year after year. The last smaller issue that we took issue with was the fact that source code access was locked behind their enterprise plan, and considering that we would want to make modifications to whatever engine we use to improve our workflow this was another nail in the coffin.&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="https://i.imgur.com/9ac0hfI.png"
+loading="lazy"
+alt="Unity Pro pricing"
+>&lt;/p>
+&lt;p>&lt;em>Slightly out of date but still illustrates the point&lt;/em>&lt;/p>
+&lt;hr>
+&lt;p>We then took a look at Game Maker 2. Game Maker 2 was a good-looking option and its pricing option for console exports was way more attractive compared to Unity. The biggest problem about Game Maker that we discovered was that it was not made for the style of game we wanted to make. Game Maker 2 was designed to make 2D-pixel art games and that is not the type of game we want to make. Technically Game Maker 2 can make other types of games, it can even make 3D games with enough work. The problem is that when you try and use an engine to make something it was not designed for you will eventually run into problems.&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="https://i.imgur.com/MSF0LUW.png"
+loading="lazy"
+alt="Game Maker 2"
+>&lt;/p>
+&lt;p>&lt;em>Game Maker 2&lt;/em>&lt;/p>
+&lt;hr>
+&lt;p>The last engine we took a look at was Godot. Right off the bat, the team liked the fact that Godot was open source. Godot also has the benefit of having a scripting language very similar to Python which also increases the potential number of people able to help on the project.&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="https://i.imgur.com/3tv4dVe.jpeg"
+loading="lazy"
+alt="GDScript"
+>&lt;/p>
+&lt;p>&lt;em>GDScript&lt;/em>&lt;/p>
+&lt;hr>
+&lt;p>The biggest drawback to Godot is the lack of console support. This is due to the open-source nature of the engine, but since Godot is open source that means the team can add support for consoles to our fork of Godot. Godot is also future-proof due to having backing from companies such as Google, which paid a company to improve its Vulkan renderer.&lt;/p>
+&lt;p>Taking all of these facts into consideration we decided to use Godot. As the game is developed the team will continue to develop our framework and make modifications to the core engine.&lt;/p>
+&lt;p>Now that the boring stuff is out of the way let&amp;rsquo;s actually talk about the progress that has been made this week.&lt;/p>
+&lt;hr>
+&lt;h1 id="let-there-be-movement">LET THERE BE MOVEMENT!
+&lt;/h1>&lt;p>Our wonderful programmer &lt;code>Idiot&lt;/code> has been hard at work on the games movement system. During the past week he has been working on replicating the original Poptropica&amp;rsquo;s movement system and it&amp;rsquo;s coming along very nicely.&lt;/p>
+&lt;hr>
+&lt;p>&lt;a class="link" href="https://youtu.be/TVpmmenfXQU" target="_blank" rel="noopener"
+>&lt;img src="https://img.youtube.com/vi/TVpmmenfXQU/0.jpg"
+loading="lazy"
+alt="Video about the movement system"
+>&lt;/a>&lt;/p>
+&lt;p>&lt;em>It&amp;rsquo;s a bit buggy and not pretty to look at but were proud of it so far (click image to watch)&lt;/em>&lt;/p>
+&lt;hr>
+&lt;p>There are still some bug to work out, UI and animations to be made but it&amp;rsquo;s a really solid start.&lt;/p>
+&lt;p>Previously you have heard me talk about ODIN. You are probably wondering what that is&amp;hellip;..&lt;/p>
+&lt;p>&lt;em>right????&lt;/em>&lt;/p>
+&lt;h1 id="odin-is-with-us">ODIN IS WITH US!
+&lt;/h1>&lt;p>From the very start of the project, I knew we would need to make a framework that would not only make it easier to develop future islands and other content for the game but would also give the other programmers and designers access to advanced features without having to interact with complex code. That is where ODIN comes in.&lt;/p>
+&lt;p>ODIN (no fancy meaning yet&amp;hellip;) is going to be a set of tools that make both content creation easier and faster. ODIN will expose different APIs, such as the console APIs to the engine that way other developers don&amp;rsquo;t have to work into complex C++ code and recompile the engine whenever they make changes. Outside of exposing APIs ODIN will have several native Godot tools to help out with development.&lt;/p>
+&lt;p>The first of these tools is called Dialogue Nodes. Dialogue Nodes is a node-based tool that will allow the team to make dialogue, missions, events, etc faster, due to the fact they won&amp;rsquo;t manually have to touch any code.&lt;/p>
+&lt;p>Ok, that sounds cool and all but &lt;em>what can ODIN CURRENTLY do????&lt;/em>&lt;/p>
+&lt;p>I&amp;rsquo;m so glad you asked.&lt;/p>
+&lt;h1 id="extra-extra-read-all-about-it">EXTRA! EXTRA! READ ALL ABOUT IT!
+&lt;/h1>&lt;p>Currently the tool is in very early stages of development. It works by loading a GraphEdit node and from this node you can spawn custom GraphNodes. Currently there is only a comment node that will allow you to comment your graph.&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="https://i.imgur.com/csv66s9.png"
+loading="lazy"
+alt="ODIN Dialogue Nodes"
+>&lt;/p>
+&lt;p>&lt;em>Current dialogue engine editor&lt;/em>&lt;/p>
+&lt;hr>
+&lt;p>When saving nodes ODIN uses a custom save file format called &lt;code>.ode&lt;/code> . The save file saves the data as JSON data so it can be easily read later when loading the file or when being read from an NPC. The contents of the save file look like this:&lt;/p>
+&lt;p>&lt;code>[{&amp;quot;Position&amp;quot;:&amp;quot;(920.0, 420.0)&amp;quot;,&amp;quot;Size&amp;quot;:&amp;quot;(220.0, 300.0)&amp;quot;,&amp;quot;Type&amp;quot;:&amp;quot;GraphNode&amp;quot;,&amp;quot;children&amp;quot;:[{&amp;quot;Text&amp;quot;:&amp;quot;Gravity Falls&amp;quot;,&amp;quot;Type&amp;quot;:&amp;quot;TextEdit&amp;quot;}]},{&amp;quot;Position&amp;quot;:&amp;quot;(1160.0, 420.0)&amp;quot;,&amp;quot;Size&amp;quot;:&amp;quot;(340.0, 300.0)&amp;quot;,&amp;quot;Type&amp;quot;:&amp;quot;GraphNode&amp;quot;,&amp;quot;children&amp;quot;:[{&amp;quot;Text&amp;quot;:&amp;quot;Start vs The Forces of Evil&amp;quot;,&amp;quot;Type&amp;quot;:&amp;quot;TextEdit&amp;quot;}]},{&amp;quot;Position&amp;quot;:&amp;quot;(920.0, 740.0)&amp;quot;,&amp;quot;Size&amp;quot;:&amp;quot;(580.0, 220.0)&amp;quot;,&amp;quot;Type&amp;quot;:&amp;quot;GraphNode&amp;quot;,&amp;quot;children&amp;quot;:[{&amp;quot;Text&amp;quot;:&amp;quot;Owl House&amp;quot;,&amp;quot;Type&amp;quot;:&amp;quot;TextEdit&amp;quot;}]}]&lt;/code>&lt;/p>
+&lt;p>Doing it this way has many benefits. The first is that it takes up very little storage which keeps the final game size small, the next reason is because JSON is efficient and Godot has built-in support for reading and writing JSON data, and finally because JSON data can easily be encrypted. The files for this game will be encrypted but the dialogue engine will be made in such a way that the editor can be exported outside the game, meaning if we want to allow for user-created islands in the future then the community can use the tools we are developing now to create them.&lt;/p>
+&lt;p>More will be shown of the dialogue engine and other ODIN tools as they are further developed but for now here is a video of the current workflow:&lt;/p>
+&lt;hr>
+&lt;p>&lt;a class="link" href="https://www.youtube.com/watch?v=dMPfXPf_-X0" target="_blank" rel="noopener"
+>&lt;img src="https://img.youtube.com/vi/dMPfXPf_-X0/0.jpg"
+loading="lazy"
+alt="Video about the Dialogue Engine"
+>&lt;/a>&lt;/p>
+&lt;p>&lt;em>The current dialogue engine workflow (click image to watch)&lt;/em>&lt;/p>
+&lt;hr>
+&lt;p>&lt;em>All these updates are cool an all but what about the future?&lt;/em>&lt;/p>
+&lt;p>You sure ask a lot of questions but it just so happens I have an answer for that to.&lt;/p>
+&lt;h1 id="im-the-map-im-the-map">I&amp;rsquo;m the map! I&amp;rsquo;m the map!
+&lt;/h1>&lt;p>The team wants this game to be a community orientated project, so decision was made to make a public Trello board where you can see what we are working on, our future goals, possible goals and even things that the you can vote on.&lt;/p>
+&lt;hr>
+&lt;p>&lt;img src="https://i.imgur.com/btxTR0J.png"
+loading="lazy"
+alt="Trello roadmap"
+>&lt;/p>
+&lt;p>&lt;em>&amp;ldquo;He has such a way with words&amp;rdquo;&lt;/em>&lt;/p>
+&lt;hr>
+&lt;p>There are a few small changes that will be made to the board in the coming days so give it time for everything to be sorted out but this should give the community a good idea on the current state of the project.&lt;/p>
+&lt;p>Speaking of the community&amp;hellip;&lt;/p>
+&lt;h1 id="invite-your-friends">Invite your friends
+&lt;/h1>&lt;p>As I have said before we want this project to be centered around the community. Invite your friends, talk with us in the server and have fun.&lt;/p>
+&lt;p>I know the server is not the best right now and I have some ideas that might make it more fun for everyone. Feel free to leave ideas in the Discord and if we think they are good then they just might make into the community voting phase and if they get enough votes then it will become a feature.&lt;/p>
+&lt;h1 id="thank-you">Thank You!
+&lt;/h1>&lt;p>Thank you all for being a part of the community and taking the time to read this blog post. Feel free to comment down below and let us know your thoughts. You guys are what make doing this project worth it. I know it didn&amp;rsquo;t come out on Friday so hopefully it will be on time next week.&lt;/p>
+&lt;p>Until next time&amp;hellip;..&lt;/p>
+&lt;p>InitRanger (Software Sorcerer)&lt;/p></description></item></channel></rss>
